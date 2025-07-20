@@ -25,7 +25,10 @@ Built with 🔥 using **Tailwind CSS**, vanilla **JavaScript**, and a sprinkle o
 - `a-series.html` – Product page for Brush A Series
 
 ---
+checkout the working explained in a video with the link below-
+\https://drive.google.com/drive/folders/1MBW9so2g52Do8KWICRWA_ZxfhakPj3VN?usp=drive_link
 
+---
 ## 📂 Folder Structure
 
 ```
