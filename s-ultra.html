@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samsung Galaxy SmartBrush S Ultra</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Poppins', 'sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-white text-black dark:bg-black dark:text-white transition-colors duration-500">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center px-8 py-4 bg-gray-100 dark:bg-gray-900 shadow-md sticky top-0 z-50">
+    <div class="flex items-center gap-2">
+      <img src="assets/logo-light.png" class="h-14 block dark:hidden" />
+      <img src="assets/logo-dark.png" class="h-14 hidden dark:block" />
+    </div>
+    <div class="flex items-center gap-6">
+      <a href="index.html" class="text-blue-600 font-semibold hover:underline">← Back Home</a>
+      <button id="modeToggle" class="text-xl hover:text-yellow-400">🌙</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="py-24 text-center">
+    <img src="assets/brush-s-ultra-blue.png" alt="Brush S Ultra" class="mx-auto h-64 mb-8">
+    <h1 class="text-5xl font-bold mb-4">Samsung Galaxy SmartBrush S Ultra</h1>
+    <p class="text-xl text-gray-600 dark:text-gray-300">AI-powered brushing. Smooth, silent, and stunning.</p>
+    <p class="text-2xl font-bold text-blue-600 mt-6">₹4,999</p>
+  </section>
+
+  <!-- Features -->
+  <section class="px-8 pb-24 max-w-4xl mx-auto space-y-6 text-lg">
+    <h2 class="text-2xl font-semibold mb-4">Key Features:</h2>
+    <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+      <li>Adaptive bristle tech with pressure sensor</li>
+      <li>30-day battery life</li>
+      <li>Wireless magnetic charging</li>
+      <li>Customizable brushing modes</li>
+      <li>Water-resistant (IPX7 certified)</li>
+    </ul>
+  </section>
+
+  <footer class="bg-gray-100 dark:bg-gray-900 text-center text-sm py-6 border-t border-gray-300 dark:border-gray-700">
+    <p class="text-gray-500 dark:text-gray-400">© 2025 Samsung SmartBrush</p>
+  </footer>
+
+  <script>
+    const modeToggle = document.getElementById('modeToggle');
+    modeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      modeToggle.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>

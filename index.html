@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samsung SmartBrush</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="font-sans bg-white text-black dark:bg-black dark:text-white transition-colors duration-500">
+    <header class="flex justify-between items-center px-8 py-4 bg-gray-100 dark:bg-gray-900 shadow-md sticky top-0 z-50">
+  
+  <!-- LEFT: Logo + Models -->
+  <div class="flex items-center gap-10">
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+      <img src="assets/logo-light.png" alt="SmartBrush Logo Light" class="h-12 md:h-16 block dark:hidden" />
+      <img src="assets/logo-dark.png" alt="SmartBrush Logo Dark" class="h-12 md:h-16 hidden dark:block" />
+    </div>
+
+    <!-- Direct Model Links -->
+<div class="flex items-center space-x-6 text-sm md:text-base font-semibold">
+  <a href="s-ultra.html" class="hover:text-blue-600 font-semibold">S Ultra</a>
+  <a href="flipbrush.html" class="hover:text-blue-600 font-semibold">Flip</a>
+  <a href="a-series.html" class="hover:text-blue-600 font-semibold">A Series</a>
+  <a href="#contact" class="hover:text-blue-600 transition">Contact Us</a> <!-- 👈 NEW -->
+</div>
+    </div>
+
+  <!-- RIGHT: Search, Buy Now, Dark Mode -->
+  <nav class="hidden md:flex items-center space-x-6">
+    <!-- Search Bar -->
+    <div class="relative" id="searchContainer">
+      <input type="text" id="searchInput" placeholder="Search models..." class="w-48 px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-700 text-sm focus:outline-none" />
+      <div id="searchResultsBox" class="hidden absolute top-full mt-2 w-72 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-xl z-50"></div>
+    </div>
+
+    <!-- Buy Now + Mode Toggle -->
+    <button class="text-blue-600 hover:underline hover:text-blue-800 font-semibold transition">Buy Now</button>
+    <button id="modeToggle" class="ml-4 text-xl hover:text-yellow-400">🌙</button>
+  </nav>
+</header>
+
+
+    <section class="relative h-screen flex items-center justify-center bg-black text-white text-center">
+      <video autoplay muted loop class="absolute w-full h-full object-cover opacity-30 z-0">
+        <source src="assets/galaxy-brush-ultra.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="z-10">
+        <h1 class="text-5xl font-extrabold mb-4">Introducing the Galaxy SmartBrush</h1>
+        <p class="text-xl opacity-90 mb-6">AI Brushing. Flip Design. Bristle Intelligence.</p>
+        <a href="#models" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md text-lg">Explore Models</a>
+      </div>
+    </section>
+
+    <section id="models" class="py-24 text-center animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
+      <h2 class="text-4xl font-bold mb-6">Choose Your SmartBrush</h2>
+      <p class="text-gray-500 dark:text-gray-300 mb-12">S Ultra, Flip, or A Series – Find your perfect clean.</p>
+        
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-8 mt-12">
+
+       <div id="product-s-ultra" class="animate-on-scroll opacity-0 transition duration-700 transform-gpu will-change-transform group bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden p-6 flex flex-col items-center hover:-translate-y-2 hover:scale-105 hover:shadow-2xl dark:shadow-black/60">
+
+
+          <img id="s-ultra-img" src="assets/brush-s-ultra-blue.png" class="h-32 mb-4 transition duration-500" alt="Brush S Ultra" />
+          <div class="flex space-x-2 mb-4">
+            <button onclick="changeImage('s-ultra-img', 'assets/brush-s-ultra-blue.png')" class="h-5 w-5 rounded-full bg-blue-600 border-2 border-white"></button>
+            <button onclick="changeImage('s-ultra-img', 'assets/brush-s-ultra-pink.png')" class="h-5 w-5 rounded-full bg-pink-400 border-2 border-white"></button>
+            <button onclick="changeImage('s-ultra-img', 'assets/brush-s-ultra-black.png')" class="h-5 w-5 rounded-full bg-gray-900 border-2 border-white"></button>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Brush S Ultra</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-300 mb-4">AI-powered, ultra-soft, adaptive bristles.</p>
+          <button class="text-blue-600 hover:underline hover:text-blue-800 font-semibold transition">Buy Now</button>
+        </div>
+
+        <div id="product-flip" class="animate-on-scroll opacity-0 transition duration-700 transform-gpu will-change-transform group bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden p-6 flex flex-col items-center hover:-translate-y-2 hover:scale-105 hover:shadow-2xl dark:shadow-black/60">
+
+          <img id="flip-img" src="assets/brush-flip-teal.png" class="h-32 mb-4 transition duration-500" alt="FlipBrush" />
+          <div class="flex space-x-2 mb-4">
+            <button onclick="changeImage('flip-img', 'assets/brush-flip-teal.png')" class="h-5 w-5 rounded-full bg-teal-500 border-2 border-white"></button>
+            <button onclick="changeImage('flip-img', 'assets/brush-flip-coral.png')" class="h-5 w-5 rounded-full bg-red-500 border-2 border-white"></button>
+            <button onclick="changeImage('flip-img', 'assets/brush-flip-purple.png')" class="h-5 w-5 rounded-full bg-purple-600 border-2 border-white"></button>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">FlipBrush</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-300 mb-4">Foldable design, pocket-sized performance.</p>
+          <button class="text-blue-600 hover:underline hover:text-blue-800 font-semibold transition">Buy Now</button>
+        </div>
+
+        <div id="product-a-series" class="animate-on-scroll opacity-0 transition duration-700 transform-gpu will-change-transform group bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden p-6 flex flex-col items-center hover:-translate-y-2 hover:scale-105 hover:shadow-2xl dark:shadow-black/60">
+
+          <img id="a-img" src="assets/brush-a-gray.png" class="h-32 mb-4 transition duration-500" alt="Brush A Series" />
+          <div class="flex space-x-2 mb-4">
+            <button onclick="changeImage('a-img', 'assets/brush-a-gray.png')" class="h-5 w-5 rounded-full bg-gray-400 border-2 border-white"></button>
+            <button onclick="changeImage('a-img', 'assets/brush-a-mint.png')" class="h-5 w-5 rounded-full bg-green-300 border-2 border-white"></button>
+            <button onclick="changeImage('a-img', 'assets/brush-a-skyblue.png')" class="h-5 w-5 rounded-full bg-sky-400 border-2 border-white"></button>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Brush A Series</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-300 mb-4">For everyday use, with built-in timer.</p>
+          <button class="text-blue-600 hover:underline hover:text-blue-800 font-semibold transition">Buy Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brush S Ultra Section -->
+<section id="ultra-section" class="py-24 bg-white dark:bg-black text-black dark:text-white">
+  <div class="container mx-auto px-8 flex flex-col md:flex-row items-center gap-12">
+    
+    <!-- Slideshow Area -->
+    <div class="w-full md:w-1/2 relative">
+      <img id="ultra-slide" src="assets/brush-s-ultra-blue.png"
+           class="rounded-lg shadow-2xl transition-all duration-500 ease-in-out opacity-100" />
+    </div>
+
+    <!-- Color Selectors + Details -->
+    <div class="w-full md:w-1/2 space-y-6">
+      <h2 class="text-4xl font-bold">Samsung Galaxy Brush S Ultra</h2>
+      <p class="text-gray-600 dark:text-gray-300">Meet the future of oral care. Adaptive bristles, AI feedback, and unmatched softness.</p>
+      <p class="text-xl font-semibold text-blue-600">₹5,499</p>
+
+      <!-- Color buttons -->
+      <div class="flex space-x-3">
+        <button onclick="changeUltraSlideWithEffect('assets/brush-s-ultra-blue.png')"
+                class="h-6 w-6 rounded-full bg-blue-600 border-2 border-white hover:scale-110 transition"></button>
+        <button onclick="changeUltraSlideWithEffect('assets/brush-s-ultra-pink.png')"
+                class="h-6 w-6 rounded-full bg-pink-400 border-2 border-white hover:scale-110 transition"></button>
+        <button onclick="changeUltraSlideWithEffect('assets/brush-s-ultra-black.png')"
+                class="h-6 w-6 rounded-full bg-gray-900 border-2 border-white hover:scale-110 transition"></button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="flip-section" class="py-24 bg-white dark:bg-black text-black dark:text-white">
+  <div class="container mx-auto px-8 flex flex-col md:flex-row items-center gap-12">
+    
+    <!-- Slideshow Area -->
+    <div class="w-full md:w-1/2 relative">
+      <img id="flip-slide" src="assets/brush-flip-teal.png"
+           class="rounded-lg shadow-2xl transition-all duration-500 ease-in-out opacity-100" />
+    </div>
+
+    <!-- Color Selectors + Details -->
+    <div class="w-full md:w-1/2 space-y-6">
+      <h2 class="text-4xl font-bold">Samsung Galaxy FlipBrush</h2>
+      <p class="text-gray-600 dark:text-gray-300">Pocket-sized powerhouse. Foldable design meets brushing brilliance.</p>
+      <p class="text-xl font-semibold text-blue-600">₹3,999</p>
+
+      <!-- Color buttons -->
+      <div class="flex space-x-3">
+        <button onclick="changeFlipSlideWithEffect('assets/brush-flip-teal.png')"
+                class="h-6 w-6 rounded-full bg-teal-500 border-2 border-white hover:scale-110 transition"></button>
+        <button onclick="changeFlipSlideWithEffect('assets/brush-flip-coral.png')"
+                class="h-6 w-6 rounded-full bg-red-500 border-2 border-white hover:scale-110 transition"></button>
+        <button onclick="changeFlipSlideWithEffect('assets/brush-flip-purple.png')"
+                class="h-6 w-6 rounded-full bg-purple-600 border-2 border-white hover:scale-110 transition"></button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="a-series-section" class="py-24 bg-white dark:bg-black text-black dark:text-white">
+  <div class="container mx-auto px-8 flex flex-col md:flex-row items-center gap-12">
+    
+    <!-- Slideshow Area -->
+    <div class="w-full md:w-1/2 relative">
+      <img id="a-slide" src="assets/brush-a-gray.png"
+           class="rounded-lg shadow-2xl transition-all duration-500 ease-in-out opacity-100" />
+    </div>
+
+    <!-- Color Selectors + Details -->
+    <div class="w-full md:w-1/2 space-y-6">
+      <h2 class="text-4xl font-bold">Samsung Galaxy Brush A Series</h2>
+      <p class="text-gray-600 dark:text-gray-300">Everyday clean. Timed brushing with a gentle touch.</p>
+      <p class="text-xl font-semibold text-blue-600">₹2,799</p>
+
+      <!-- Color buttons -->
+      <div class="flex space-x-3">
+        <button onclick="changeASlideWithEffect('assets/brush-a-gray.png')"
+                class="h-6 w-6 rounded-full bg-gray-400 border-2 border-white hover:scale-110 transition"></button>
+        <button onclick="changeASlideWithEffect('assets/brush-a-mint.png')"
+                class="h-6 w-6 rounded-full bg-green-300 border-2 border-white hover:scale-110 transition"></button>
+        <button onclick="changeASlideWithEffect('assets/brush-a-skyblue.png')"
+                class="h-6 w-6 rounded-full bg-sky-400 border-2 border-white hover:scale-110 transition"></button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+    
+   <footer class="bg-gray-100 dark:bg-gray-900 text-sm py-12 px-8 mt-24 border-t border-gray-300 dark:border-gray-700">
+  <div class="flex flex-col md:flex-row justify-between gap-8">
+    
+    <!-- CONTACT US -->
+    <div id="contact" class="w-full md:w-1/3">
+      <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+      <form action="https://formspree.io/f/xqalelrj" method="POST" class="space-y-4">
+        <input 
+          type="text" 
+          name="name" 
+          placeholder="Your Name" 
+          required
+          class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none" 
+        />
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Your Email" 
+          required
+          class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none" 
+        />
+        <textarea 
+          name="message" 
+          rows="4" 
+          placeholder="Your Message" 
+          required
+          class="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none"
+        ></textarea>
+        <button 
+          type="submit" 
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md font-semibold transition"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+
+    <!-- MODELS -->
+    <div class="w-full md:w-1/4 flex flex-col justify-start pt-2 space-y-3">
+      <h4 class="text-lg font-semibold mb-2">Explore Models</h4>
+      <a href="s-ultra.html" class="hover:text-blue-600 font-semibold">S Ultra</a>
+      <a href="flipbrush.html" class="hover:text-blue-600 font-semibold">Flip</a>
+      <a href="a-series.html" class="hover:text-blue-600 font-semibold">A Series</a>
+    </div>
+
+    <!-- LINKS -->
+    <div class="w-full md:w-1/4 flex flex-col items-start justify-start pt-2 space-y-3">
+      <a href="#" class="hover:text-blue-600">About Us</a>
+      <a href="#" class="hover:text-blue-600">Support</a>
+      <a href="#" class="hover:text-blue-600">Privacy Policy</a>
+      <a href="#" class="hover:text-blue-600">Terms</a>
+    </div>
+  </div>
+
+  <p class="text-center mt-8 text-gray-500 dark:text-gray-400">
+    © 2025 Samsung SmartBrush. All rights reserved.
+  </p>
+</footer>
+
+
+
+
+
+
+
+    <script>
+      // --- THEME TOGGLE SCRIPT (Example) ---
+      const modeToggle = document.getElementById('modeToggle');
+      modeToggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        modeToggle.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      });
+
+      // --- IMAGE CHANGER SCRIPT ---
+      function changeImage(imgId, newSrc) {
+        document.getElementById(imgId).src = newSrc;
+      }
+
+      // --- NEW SEARCH DROPDOWN SCRIPT ---
+      document.addEventListener('DOMContentLoaded', () => {
+        // 1. Define Product Data
+        const products = [
+          {
+            id: 'product-s-ultra',
+            name: 'Brush S Ultra',
+            description: 'AI-powered, adaptive bristles.',
+            image: 'assets/brush-s-ultra-blue.png'
+          },
+          {
+            id: 'product-flip',
+            name: 'FlipBrush',
+            description: 'Foldable, pocket-sized.',
+            image: 'assets/brush-flip-teal.png'
+          },
+          {
+            id: 'product-a-series',
+            name: 'Brush A Series',
+            description: 'Everyday use with a timer.',
+            image: 'assets/brush-a-gray.png'
+          }
+        ];
+
+        // 2. Get DOM Elements
+        const searchInput = document.getElementById('searchInput');
+        const searchResultsBox = document.getElementById('searchResultsBox');
+        const searchContainer = document.getElementById('searchContainer');
+
+        // 3. Listen for Input
+        searchInput.addEventListener('input', () => {
+          const searchTerm = searchInput.value.toLowerCase().trim();
+
+          // Clear previous results
+          searchResultsBox.innerHTML = '';
+
+          if (searchTerm.length === 0) {
+            searchResultsBox.classList.add('hidden');
+            return;
+          }
+
+          // Filter products based on search term
+          const filteredProducts = products.filter(product => 
+            product.name.toLowerCase().includes(searchTerm) ||
+            product.description.toLowerCase().includes(searchTerm)
+          );
+
+          // 4. Display Results
+          if (filteredProducts.length > 0) {
+            filteredProducts.forEach(product => {
+              const resultItem = document.createElement('a');
+              resultItem.href = `#${product.id}`;
+              resultItem.classList.add('flex', 'items-center', 'p-3', 'hover:bg-gray-100', 'dark:hover:bg-gray-700', 'transition', 'duration-150', 'ease-in-out', 'cursor-pointer');
+              
+              resultItem.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="h-10 w-10 object-contain mr-4 bg-gray-200 dark:bg-gray-600 rounded-md p-1">
+                <div>
+                  <p class="font-semibold text-sm">${product.name}</p>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">${product.description}</p>
+                </div>
+              `;
+
+              // Hide box on click and scroll to item
+              resultItem.addEventListener('click', () => {
+                 searchResultsBox.classList.add('hidden');
+              });
+
+              searchResultsBox.appendChild(resultItem);
+            });
+          } else {
+            searchResultsBox.innerHTML = `<p class="p-4 text-sm text-center text-gray-500">No models found.</p>`;
+          }
+
+          searchResultsBox.classList.remove('hidden');
+        });
+
+        // 5. Hide results when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!searchContainer.contains(event.target)) {
+                searchResultsBox.classList.add('hidden');
+            }
+        });
+
+      });
+      function changeUltraSlide(src) {
+  document.getElementById("ultra-slide").src = src;
+}
+function changeUltraSlideWithEffect(newSrc) {
+  const img = document.getElementById("ultra-slide");
+  img.classList.add("opacity-0", "-translate-x-5"); // fade out + slide left
+
+  setTimeout(() => {
+    img.src = newSrc;
+    img.classList.remove("-translate-x-5");
+    img.classList.add("translate-x-5"); // prepare for slide in
+  }, 300);
+
+  setTimeout(() => {
+    img.classList.remove("opacity-0", "translate-x-5");
+    img.classList.add("opacity-100");
+  }, 400);
+}
+
+function changeFlipSlideWithEffect(newSrc) {
+  const img = document.getElementById("flip-slide");
+  img.classList.add("opacity-0", "-translate-x-5");
+
+  setTimeout(() => {
+    img.src = newSrc;
+    img.classList.remove("-translate-x-5");
+    img.classList.add("translate-x-5");
+  }, 300);
+
+  setTimeout(() => {
+    img.classList.remove("opacity-0", "translate-x-5");
+    img.classList.add("opacity-100");
+  }, 400);
+}
+
+function changeASlideWithEffect(newSrc) {
+  const img = document.getElementById("a-slide");
+  img.classList.add("opacity-0", "-translate-x-5");
+
+  setTimeout(() => {
+    img.src = newSrc;
+    img.classList.remove("-translate-x-5");
+    img.classList.add("translate-x-5");
+  }, 300);
+
+  setTimeout(() => {
+    img.classList.remove("opacity-0", "translate-x-5");
+    img.classList.add("opacity-100");
+  }, 400);
+}
+
+    </script>
+    <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-10');
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        observer.unobserve(entry.target); // Animate only once
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
+    </body>
+</html>

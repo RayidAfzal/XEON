@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brush A Series - Samsung SmartBrush</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white dark:bg-black text-black dark:text-white font-sans">
+
+  <header class="px-6 py-4 shadow-md flex justify-between items-center bg-gray-100 dark:bg-gray-900">
+    <a href="index.html" class="text-2xl font-bold text-blue-600">SmartBrush</a>
+    <nav class="space-x-4">
+      <a href="index.html#models" class="hover:text-blue-600">Back to Models</a>
+    </nav>
+  </header>
+
+  <section class="py-16 px-8 flex flex-col md:flex-row items-center gap-12">
+    <div class="w-full md:w-1/2">
+      <div class="relative overflow-hidden">
+        <img id="a-series-img" src="assets/brush-a-gray.png" alt="Brush A Series" class="w-full h-auto object-contain transition duration-500">
+      </div>
+      <div class="flex space-x-3 mt-4 justify-center">
+        <button onclick="changeImage('a-series-img', 'assets/brush-a-gray.png')" class="h-6 w-6 rounded-full bg-red-500 border-2 border-white"></button>
+        <button onclick="changeImage('a-series-img', 'assets/brush-a-mint.png')" class="h-6 w-6 rounded-full bg-teal-500 border-2 border-white"></button>
+        <button onclick="changeImage('a-series-img', 'assets/brush-a-skyblue.png')" class="h-6 w-6 rounded-full bg-purple-600 border-2 border-white"></button>
+      </div>
+    </div>
+    <div class="w-full md:w-1/2">
+      <h1 class="text-4xl font-bold mb-4">Brush A Series</h1>
+      <p class="text-gray-600 dark:text-gray-300 mb-4">Everyday essential with built-in timer and soft bristles.</p>
+      <p class="text-blue-600 font-bold text-2xl mb-4">₹1,499</p>
+      <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition">Buy Now</a>
+    </div>
+  </section>
+
+  <footer class="bg-gray-100 dark:bg-gray-900 text-center text-sm py-6 border-t border-gray-300 dark:border-gray-700">
+    <p class="text-gray-500 dark:text-gray-400">© 2025 Samsung SmartBrush. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function changeImage(id, src) {
+      document.getElementById(id).src = src;
+    }
+  </script>
+</body>
+</html>
