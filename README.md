@@ -70,8 +70,8 @@ Feel free to replace the action URL with your own Formspree endpoint:
 No build tools, no bundlers, no drama. Just clone and open `index.html`.
 
 ```bash
-git clone https://github.com/your-username/smartbrush-landing-page.git
-cd smartbrush-landing-page
+git clone https://github.com/rayidafzal/XEON.git
+cd XEON
 open index.html
 ```
 
